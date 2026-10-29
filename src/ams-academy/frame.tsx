@@ -8,13 +8,13 @@ export function Frame() {
   };
 
   const navigateToOther = () => {
-    navigate("/other");
+    navigate("/product");
   };
 
   return (
     <div>
       <button onClick={navigateToComponent}>Component</button>
-      <button onClick={navigateToOther}>Other</button>
+      <button onClick={navigateToOther}>Product</button>
       <div>
         <Outlet />
       </div>
