@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 const path = require("path");
 
 module.exports = {
@@ -24,6 +25,10 @@ module.exports = {
                         }*/
           }
         ]
+      },
+      {
+        test: /\.(css)$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"]
       }
     ]
   },
@@ -32,6 +37,9 @@ module.exports = {
       title: "AMS-REACT",
       template: "./public/index.html",
       filename: "index.html"
+    }),
+    new Dotenv({
+      systemvars: true
     })
   ]
 };
